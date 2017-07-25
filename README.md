@@ -21,7 +21,14 @@ _This program includes css, js, and img folders._
 | 1. Click "Search" and show all dogs | Search button clicked | All dogs appear in grid below search form |
 | 2. Search dogs by age | Input "puppy" on checkbox | Show all puppies |
 | 3. Search dogs by more than one age | Input "puppy" & "adult" and search | All puppies and adults are shown. |
-| 4. Search dogs by gender | Input "puppy" & 
+| 4. Search dogs by gender | Input "female" | Show all female dogs |
+| 5. Search dogs by multiple genders | Input "Male" & "Female" | Show all dogs |
+| 6. Search dogs by size | Search by "Small", "Medium", "Large", "X-Large" Separately | Return proper results based on size |
+| 7. Search age, gender, & size | Input "puppy", "female", and "small" | Show all small, female puppies. |
+| 8. Click photo and show bio in a new page | Click on first dog shown | Open new page and show bio. |
+| 9. Show adoption page | Click on "Adopt" button on bio page | Show shelter website. |
+| 10. Show dogs with adoption pending | click adopt | Make image greyed |
+
 
 ## Known Bugs
 
