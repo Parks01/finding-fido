@@ -1,10 +1,3 @@
-// for (var i = 0; i < 2; i++) {
-// 	for (var j = 0; j <= 9; j++) {
-// 		alert(i.toString() + j.toString());
-// 	}
-// }
-
-
 function Dog(dogName,age,size,gender,dogImage,shelter,isAvailable)
 {
 	this.dogName = dogName;
@@ -69,7 +62,7 @@ $(document).ready(function(){
 	fillDogsData();
 	//var tableData = "<table><tr><td>Name</td><td>Age</td><td>Size</td><td>Image</td></tr>";
 	$("#searchAll").click(function()
-	{ 
+	{
 		var i = 0;
 		for (var j = 0; j < dogs.length; j++)
 		{
