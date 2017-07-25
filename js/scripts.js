@@ -60,13 +60,13 @@ function fillDogsData()
 $(document).ready(function(){
 
 	fillDogsData();
-	var tableData = "<table><tr><td>Name</td><td>Age</td><td>Size</td><td>Image</td></tr>";
+	//var tableData = "<table><tr><td>Name</td><td>Age</td><td>Size</td><td>Image</td></tr>";
+	$("#searchAll").click(function()
+{
 	for(var i = 0; i < dogs.length; i++)
 	{
-		tableData = tableData + "<tr><td>" + dogs[i].dogName + "</td><td>" + dogs[i].age +"</td><td>" + dogs[i].size + "</td><td><img src='" + dogs[i].dogImage + "' /> </td></tr>";
+
+		 $("#show-all-results").append("<table><tr colspan=\"2\"><div id=\"show-image\"><img src='" + dogs[i].dogImage + "'/></div></tr><tr><th colspan=\"2\" class=\"dog-name\">" + dogs[i].dogName + "</th></tr><tr><td>Age: " + dogs[i].age + "</td><td class=\"age\"></td></tr><tr><td>Gender: " + dogs[i].gender + "</td><td class=\"gender\"></td></tr></table>")
 	}
-	tableData = tableData + "</table>";
-	console.log(tableData);
-	$("#dogstable").html(tableData);
-// if()
+});
 });

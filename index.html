@@ -1,14 +1,69 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script
-    src="http://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-<script src="js/scripts.js"></script>
-</head>
-<body>
-<div id="dogstable">
-</div>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <title>Finding Fido</title>
+  </head>
+  <body>
+    <div class="top-bar">
+      <ul class="nav nav-tabs">
+        <li>Home</li>
+        <li>About Us/Contact</li>
+        <li>View All Dogs</li>
+        <li>Resources</li>
+      </ul>
+    </div>
+    <div class="container">
+      <button id="searchAll" class="btn btn-primary">Search All Dogs</button>
+      <div class="well">
+
+        <h3>Filter Search:</h3>
+
+        <form id="dogSearchFilter">
+          <div class="row">
+            <div class="col-md-4">
+              <h4>Search by Age:</h4>
+              <div class="search form-group">
+                <input type="checkbox" name="dogAge" value="puppy">Puppy <br>
+                <input type="checkbox" name="dogAge" value="adult">Adult <br>
+                <input type="checkbox" name="dogAge" value="senior">Senior <br>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <h4>Search by Gender:</h4>
+              <div class="search form-group">
+                <input type="checkbox" name="dogFemale" value="female">Female <br>
+                <input type="checkbox" name="dogMale" value="male">Male <br>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <h4>Search by Size:</h4>
+              <div class="search form-group">
+                <input type="checkbox" name="dogSmall" value="small">Small (up to 20 lbs) <br>
+                <input type="checkbox" name="dogMedium" value="medium">Medium (up to 40 lbs) <br>
+                <input type="checkbox" name="dogLarge" value="large">Large (up to 60 lbs) <br>
+              </div>
+            </div>
+          </div>
+          <button type="submit" id="submitSearch" class="btn btn-primary">Show Results</button>
+        </form>
+      </div>
+
+      <div id="show-all-results">
+
+
+      </div>
+
+
+    </div>
+  </body>
 </html>
