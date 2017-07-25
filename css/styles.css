@@ -83,7 +83,7 @@ h4.searchCategory {
   background-color: #5DADE2;
   border: none;
 }
-#searchAll:hover, #searchAll:active, #showResults:hover, #showResults:active {
+#searchAll:hover, #searchAll:active, #submitSearch:hover, #submitSearch:active {
   border: solid 3px #5DADE2;
 }
 
@@ -96,7 +96,7 @@ h4.searchCategory {
   font-size: 18px;
   margin: 20px;
 }
-#showResults {
+#submitSearch {
   font-family: sans-serif;
   font-size: 15px;
   letter-spacing: 5px;
