@@ -26,34 +26,29 @@
             <a class="nav-item nav-link disabled" href="#resources">Resources</a>
           </div>
         </nav>
-
-        <h1>FINDING FIDO</h1>
+        <h1 class="title">FINDING FIDO</h1>
       </div>
-
     </div>
-
-
-
 
     <div class="container">
       <button id="searchAll" class="btn btn-primary">Search All Dogs</button>
-      <div class="well">
+      <div class="well searchForm">
 
-        <h3>Filter Search:</h3>
+        <h3 class="filterSearch">Filter Search:</h3>
 
         <form id="dogSearchFilter">
           <div class="row">
             <div class="col-md-4">
-              <h4>Search by Age:</h4>
+              <h4 class="searchCategory">Search by Age:</h4>
               <div class="search form-group">
-                <input type="checkbox" name="dogAge" value="puppy">Puppy <br>
-                <input type="checkbox" name="dogAge" value="adult">Adult <br>
-                <input type="checkbox" name="dogAge" value="senior">Senior <br>
+                <input type="checkbox" name="dogAge" value="puppy">Puppy (up to 1 years old)<br>
+                <input type="checkbox" name="dogAge" value="adult">Adult (up to 7 years old)<br>
+                <input type="checkbox" name="dogAge" value="senior">Senior (7+ years old)<br>
               </div>
             </div>
 
             <div class="col-md-4">
-              <h4>Search by Gender:</h4>
+              <h4 class="searchCategory">Search by Gender:</h4>
               <div class="search form-group">
                 <input type="checkbox" name="dogFemale" value="female">Female <br>
                 <input type="checkbox" name="dogMale" value="male">Male <br>
@@ -61,7 +56,7 @@
             </div>
 
             <div class="col-md-4">
-              <h4>Search by Size:</h4>
+              <h4 class="searchCategory">Search by Size:</h4>
               <div class="search form-group">
                 <input type="checkbox" name="dogSmall" value="small">Small (up to 20 lbs) <br>
                 <input type="checkbox" name="dogMedium" value="medium">Medium (up to 40 lbs) <br>
