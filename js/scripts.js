@@ -64,7 +64,7 @@ $(document).ready(function(){
 	fillDogsData();
 
 	$("#searchAll").click(function()
-	{
+	{ $("#show-all-results").empty();
 	var i = 0;
 		for (var j = 0; j < dogs.length; j++)
 		{
@@ -72,11 +72,32 @@ $(document).ready(function(){
 			for (var k = 0; k < 3; k++)
 			{
 				if (i < dogs.length) {
-				$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>'" + "<br>" + dogs[i].dogName + "<br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
+				$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>'" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
 				i++;
 				}
 			}
 				$("#show-all-results").append("</div>")
 			}
-		});
 	});
+
+	$("#dogSearchFilter").submit(function(event) {
+			event.preventDefault();
+			$("#show-all-results").empty();
+
+			var filterAge = [];
+			$("input:checkbox[name=dogAge]:checked").each(function(){
+      	filterAge.push($(this).val());
+
+				for(var i=0; i< dogs.length; i++)
+			{
+				for(var j=0; j< filterAge.length ; j++)
+				{
+					if(dogs[i].age === filterAge[j])
+					{
+						$("#show-all-results").append("<table><tr colspan=\"2\"><div id=\"show-image\"><img src='" + dogs[i].dogImage + "'/></div></tr><tr><th colspan=\"2\" class=\"dog-name\"><strong>" + dogs[i].dogName + "</strong></th></tr><tr><td>Age: " + dogs[i].age + "</td><td class=\"age\"></td></tr><tr><td>Gender: " + dogs[i].gender + "</td><td class=\"gender\"></td></tr></table>")
+					}
+				}
+			}
+	});
+});
+});
