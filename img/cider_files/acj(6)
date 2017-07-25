@@ -1,0 +1,29 @@
+OX_1969414068({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://us-ads.openx.net/{medium}/1.0/{rtype}?ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=10&ph=94ef58655625200a8cfc5b15afcd0b94ad52d590",
+    "oxt": 261.408,
+    "adunits" : [
+      {
+        "auid":"538786111",
+        "chain_timeout":"",
+        "chain":[
+          {
+            "is_fallback":1,
+            "ad_id":"0",
+            "adv_acct_id":"",
+            "width":"728",
+            "height":"90",
+            "html":"<script type=\"text/javascript\"><!--\ngoogle_ad_client = \"ca-pub-6163857992956964\";\n/* .2 8842.3 petango.com US tier3 desktop 728x90_2 */\ngoogle_ad_slot = \"1760722367\";\ngoogle_ad_width = 728;\ngoogle_ad_height = 90;\n//-->\n</script>\n<script type=\"text/javascript\"\nsrc=\"//pagead2.googlesyndication.com/pagead/show_ads.js\">\n</script>",
+            "target":"_blank",
+            "ts":"1fHJpZD0zOWYwZGIwNi0xZjZhLTQzZjMtYTMxMy1kNTAyNDgxZWNiNDl8cnQ9MTUwMTAwMjk4M3xhdWlkPTUzODc4NjExMXxhdW09RE1JRC5XRUJ8YXVwZj1kaXNwbGF5fHNpZD01MzcyODgwOTN8cHViPTc2NDU2fHBjPVVTRHxyYWlkPTliYzAxYmFjLWZjYzktNDI0OS1hZTAwLTIyZjU0MmFiOWIwNnxycz0xfHVyPUZ6OGFyZk5vNEo",
+            "type":"html",
+            "ad_url":"<script type=\"text/javascript\"><!--\ngoogle_ad_client = \"ca-pub-6163857992956964\";\n/* .2 8842.3 petango.com US tier3 desktop 728x90_2 */\ngoogle_ad_slot = \"1760722367\";\ngoogle_ad_width = 728;\ngoogle_ad_height = 90;\n//-->\n</script>\n<script type=\"text/javascript\"\nsrc=\"//pagead2.googlesyndication.com/pagead/show_ads.js\">\n</script>"
+          }
+        ]
+      }
+    ]
+  }
+});
