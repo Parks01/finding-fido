@@ -62,11 +62,21 @@ $(document).ready(function(){
 	fillDogsData();
 	//var tableData = "<table><tr><td>Name</td><td>Age</td><td>Size</td><td>Image</td></tr>";
 	$("#searchAll").click(function()
-{
-	for(var i = 0; i < dogs.length; i++)
 	{
-
-		 $("#show-all-results").append("<table><tr colspan=\"2\"><div id=\"show-image\"><img src='" + dogs[i].dogImage + "'/></div></tr><tr><th colspan=\"2\" class=\"dog-name\">" + dogs[i].dogName + "</th></tr><tr><td>Age: " + dogs[i].age + "</td><td class=\"age\"></td></tr><tr><td>Gender: " + dogs[i].gender + "</td><td class=\"gender\"></td></tr></table>")
-	}
-});
-});
+	var i = 0;
+		for (var j = 0; j < dogs.length; j++)
+		{
+			$("#show-all-results").append("<div class='row'>")
+			for (var k = 0; k < 3; k++)
+			{
+				if (i < dogs.length) {
+				$("#show-all-results").append("<div class='col-md-4'>" + dogs[i].dogImage + dogs[i].dogName + dogs[i].age + dogs[i].gender + "</div>");
+				console.log(dogs[i].dogImage, dogs[i].dogName, dogs[i].age, dogs[i].gender)
+				//  $("#show-all-results").append("<div class='col-md-4'><div id=\"show-image\"><img src='" + dogs[i].dogImage + "'/></div></tr><tr><th colspan=\"2\" class=\"dog-name\">" + dogs[i].dogName + "<br><br>Age: " + dogs[i].age + "</td><td class=\"age\"><br>Gender: " + dogs[i].gender + "</td><td class=\"gender\"></td></tr></div>");
+				i++;
+				}
+			}
+				$("#show-all-results").append("</div>")
+			}
+		});
+	});
