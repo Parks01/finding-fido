@@ -4,14 +4,13 @@
 
 body {
   background-color: #E5E8E8;
-
 }
 
-#show-all-results img {
+#results img {
   width: 300px;
   height: 300px;
 }
-#show-all-results {
+#results {
   font-size: 20px;
   text-align: center;
   font-family: sans-serif;
