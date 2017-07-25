@@ -11,58 +11,47 @@ body {
   width: 300px;
   height: 300px;
 }
+#show-all-results {
+  font-size: 20px;
+  text-align: center;
+  font-family: sans-serif;
+}
 
 nav {
   background-color: #48C9B0;
-  /*position: fixed;*/
   top: 0;
   width: 100%;
   margin-bottom: 0px;
+  padding: 5px 5px 10px 5px;
 }
-nav a {
-  color: #f2f2f2;
+nav a:link, nav a:visited {
+  color: #FFFFFF;
   text-align: center;
-  padding: 14px 16px;
+  margin-left: 70px;
   text-decoration: none;
-}
-#searchAll {
-  font-family: sans-serif;
   font-size: 20px;
   letter-spacing: 5px;
-  margin: 3% 35% 2% 35%;
-  padding: 20px 30px 20px 30px;
-  background-color: #5DADE2;
-  border: none;
-}
-#searchAll:hover, #searchAll:active, #submitSearch:hover, #submitSearch:active {
-  border: solid 3px #5DADE2;
-}
-#submitSearch {
   font-family: sans-serif;
-  font-size: 15px;
-  letter-spacing: 5px;
-  margin-left: 80%;
-  margin-top: 3%;
-  padding: 15px 20px 15px 20px;
-  background-color: #5DADE2;
-  border: none;
 }
-
-.header {
-  background-image: url("../img/dogs-running.jpg");
-  background-size: 100%;
-  background-attachment: fixed;
-  height: 600px;
-  background-repeat: no-repeat;
-  margin-top: 0px;
+nav a:hover{
+  color: #D5F5E3;
+  font-size: 23px;
+  text-decoration: none;
+}
+nav a.navbar-brand {
+  margin-left: 5px;
+}
+.navbar-toggler {
+  background-color: #48C9B0;
+  border: none;
 }
 
 h1.title {
   text-align: center;
-  margin: 200px 350px 300px 350px;
+  margin: 300px 350px 0px 350px;
   padding: 20px 30px 20px 30px;
-  letter-spacing: 15px;
-  font-size: 50px;
+  letter-spacing: 30px;
+  font-size: 60px;
   color: #839192;
   background-color: white;
   opacity: 0.7;
@@ -80,6 +69,48 @@ h4.searchCategory {
   letter-spacing: 2px;
 }
 
+.header {
+  background-image: url("../img/dogs-running.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
+  height: 900px;
+  width: 100vw;
+  background-repeat: no-repeat;
+  margin: 0px;
+}
+
+#searchAll {
+  font-family: sans-serif;
+  font-size: 20px;
+  letter-spacing: 5px;
+  margin: 3% 35% 2% 35%;
+  padding: 20px 30px 20px 30px;
+  background-color: #5DADE2;
+  border: none;
+}
+#searchAll:hover, #searchAll:active, #showResults:hover, #showResults:active {
+  border: solid 3px #5DADE2;
+}
+
+#searchSection {
+  margin-bottom: 50px;
+  margin-top: 0px;
+  padding: 0;
+}
+#dogSearchFilter {
+  font-size: 18px;
+  margin: 20px;
+}
+#showResults {
+  font-family: sans-serif;
+  font-size: 15px;
+  letter-spacing: 5px;
+  margin-left: 80%;
+  margin-top: 4%;
+  padding: 15px 20px 15px 20px;
+  background-color: #5DADE2;
+  border: none;
+}
 
 .well {
   border-radius: 10px;
