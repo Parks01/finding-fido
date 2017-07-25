@@ -54,16 +54,18 @@ function fillDogsData()
   dogs[18] = newDog19;
   var newDog20 = new Dog("Mamas", "adult", "small", "female", "img/mamas.jpg", "http://petango.com/Adopt/Dog-Chihuahua-Short-Coat-35859891", true);
   dogs[19] = newDog20;
+	var newDog21 = new Dog("Bon Bon", "adult", "small", "female", "img/bonbon.jpg", "https://s3.amazonaws.com/filestore.rescuegroups.org/5922/pictures/animals/11624/11624355/46755990_500x531.jpg", true);
+	dogs[20] = newDog21;
 
 }
 
 $(document).ready(function(){
 
 	fillDogsData();
-	//var tableData = "<table><tr><td>Name</td><td>Age</td><td>Size</td><td>Image</td></tr>";
+
 	$("#searchAll").click(function()
-	{
-		var i = 0;
+	{ $("#show-all-results").empty();
+	var i = 0;
 		for (var j = 0; j < dogs.length; j++)
 		{
 			$("#show-all-results").append("<div class='row'>")
@@ -76,27 +78,23 @@ $(document).ready(function(){
 			}
 				$("#show-all-results").append("</div>")
 			}
-		// for(var i = 0; i < dogs.length; i++)
-		// {
-		//
-		//  $("#show-all-results").append("<table><tr colspan=\"2\"><div id=\"show-image\"><img src='" + dogs[i].dogImage + "'/></div></tr><tr><th colspan=\"2\" class=\"dog-name\">" + dogs[i].dogName + "</th></tr><tr><td>Age: " + dogs[i].age + "</td><td class=\"age\"></td></tr><tr><td>Gender: " + dogs[i].gender + "</td><td class=\"gender\"></td></tr></table>")
-		// }
 	});
 
-	$("#dogSearchFilter").submit(function(event)	{
+	$("#dogSearchFilter").submit(function(event) {
 			event.preventDefault();
+			$("#show-all-results").empty();
 
 			var filterAge = [];
 			$("input:checkbox[name=dogAge]:checked").each(function(){
       	filterAge.push($(this).val());
 
 				for(var i=0; i< dogs.length; i++)
-			{ debugger;
+			{
 				for(var j=0; j< filterAge.length ; j++)
 				{
 					if(dogs[i].age === filterAge[j])
 					{
-						$("#show-all-filtered").append("<table><tr colspan=\"2\"><div id=\"show-image\"><img src='" + dogs[i].dogImage + "'/></div></tr><tr><th colspan=\"2\" class=\"dog-name\"><strong>" + dogs[i].dogName + "</strong></th></tr><tr><td>Age: " + dogs[i].age + "</td><td class=\"age\"></td></tr><tr><td>Gender: " + dogs[i].gender + "</td><td class=\"gender\"></td></tr></table>")
+						$("#show-all-results").append("<table><tr colspan=\"2\"><div id=\"show-image\"><img src='" + dogs[i].dogImage + "'/></div></tr><tr><th colspan=\"2\" class=\"dog-name\"><strong>" + dogs[i].dogName + "</strong></th></tr><tr><td>Age: " + dogs[i].age + "</td><td class=\"age\"></td></tr><tr><td>Gender: " + dogs[i].gender + "</td><td class=\"gender\"></td></tr></table>")
 					}
 				}
 			}
