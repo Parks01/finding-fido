@@ -54,19 +54,29 @@ function fillDogsData()
   dogs[18] = newDog19;
   var newDog20 = new Dog("Mamas", "adult", "small", "female", "img/mamas.jpg", "http://petango.com/Adopt/Dog-Chihuahua-Short-Coat-35859891", true);
   dogs[19] = newDog20;
+	var newDog21 = new Dog("Bon Bon", "adult", "small", "female", "img/bonbon.jpg", "https://s3.amazonaws.com/filestore.rescuegroups.org/5922/pictures/animals/11624/11624355/46755990_500x531.jpg", true);
+	dogs[20] = newDog21;
 
 }
 
 $(document).ready(function(){
 
 	fillDogsData();
-	//var tableData = "<table><tr><td>Name</td><td>Age</td><td>Size</td><td>Image</td></tr>";
-	$("#searchAll").click(function()
-{
-	for(var i = 0; i < dogs.length; i++)
-	{
 
-		 $("#show-all-results").append("<table><tr colspan=\"2\"><div id=\"show-image\"><img src='" + dogs[i].dogImage + "'/></div></tr><tr><th colspan=\"2\" class=\"dog-name\">" + dogs[i].dogName + "</th></tr><tr><td>Age: " + dogs[i].age + "</td><td class=\"age\"></td></tr><tr><td>Gender: " + dogs[i].gender + "</td><td class=\"gender\"></td></tr></table>")
-	}
-});
-});
+	$("#searchAll").click(function()
+	{
+	var i = 0;
+		for (var j = 0; j < dogs.length; j++)
+		{
+			$("#show-all-results").append("<div class='row'>")
+			for (var k = 0; k < 3; k++)
+			{
+				if (i < dogs.length) {
+				$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>'" + "<br>" + dogs[i].dogName + "<br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
+				i++;
+				}
+			}
+				$("#show-all-results").append("</div>")
+			}
+		});
+	});
