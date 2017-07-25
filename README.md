@@ -40,7 +40,7 @@ _For support, please contact Kim Schulze at kimberlykayschulze@gmail.com_
 
 ## Technologies Used
 
-_This program uses HTML, CSS, and Javascript and utilizes bootstrap.css and jquery.js_
+_This program uses HTML, CSS, and Javascript and utilizes bootstrap.css and jquery.js._
 
 ### License
 
