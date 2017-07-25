@@ -62,11 +62,24 @@ $(document).ready(function(){
 	fillDogsData();
 	//var tableData = "<table><tr><td>Name</td><td>Age</td><td>Size</td><td>Image</td></tr>";
 	$("#searchAll").click(function()
-{
-	for(var i = 0; i < dogs.length; i++)
 	{
+		for(var i = 0; i < dogs.length; i++)
+		{
 
 		 $("#show-all-results").append("<table><tr colspan=\"2\"><div id=\"show-image\"><img src='" + dogs[i].dogImage + "'/></div></tr><tr><th colspan=\"2\" class=\"dog-name\">" + dogs[i].dogName + "</th></tr><tr><td>Age: " + dogs[i].age + "</td><td class=\"age\"></td></tr><tr><td>Gender: " + dogs[i].gender + "</td><td class=\"gender\"></td></tr></table>")
-	}
-});
+		}
+	});
+	$("#dogSearchFilter").submit(function(event)	{
+			event.preventDefault();
+			// var ageInput = document.getElementById("#age-input").checked = true;
+			// console.log(ageInput);
+		
+			for(var i=0; i< dogs.length; i++)
+		{
+			if(dogs[i].age === $("input:checkbox[name=dogAge]:checked").val())
+			{
+				$("#show-all-results").append("<table><tr colspan=\"2\"><div id=\"show-image\"><img src='" + dogs[i].dogImage + "'/></div></tr><tr><th colspan=\"2\" class=\"dog-name\">" + dogs[i].dogName + "</th></tr><tr><td>Age: " + dogs[i].age + "</td><td class=\"age\"></td></tr><tr><td>Gender: " + dogs[i].gender + "</td><td class=\"gender\"></td></tr></table>")
+			}
+		}
+	});
 });
