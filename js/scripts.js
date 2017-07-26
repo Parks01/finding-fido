@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-function Dog(dogName,age,size,gender,dogImage,shelter,isAvailable)
-{
-=======
+
 function Dog(dogName,age,sizeDog,gender,dogImage,shelter,isAvailable) {
->>>>>>> copy1
 	this.dogName = dogName;
 	this.age = age;
 	this.sizeDog = sizeDog;
@@ -12,6 +8,7 @@ function Dog(dogName,age,sizeDog,gender,dogImage,shelter,isAvailable) {
 	this.dogImage = dogImage;
 	this.isAvailable = isAvailable;
 }
+
 var dogs = [];
 
 function fillDogsData()
@@ -83,36 +80,9 @@ $(document).ready(function() {
 		$("#show-all-results").empty();
 
 		var filterAge = [];
-<<<<<<< HEAD
-=======
 		var filterGender = [];
 		var filterSize = [];
->>>>>>> copy1
-		$("input:checkbox[name=dogAge]:checked").each(function() {
-    	filterAge.push($(this).val());
 
-			for (var i = 0; i < dogs.length; i++) {
-				for (var j = 0; j < filterAge.length; j++) {
-					if (dogs[i].age === filterAge[j]) {
-						$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>'" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
-					}
-				}
-			}
-		});
-
-<<<<<<< HEAD
-		var filterGender = [];
-		$("input:checkbox[name=dogGender]:checked").each(function() {
-			filterGender.push($(this).val());
-			for (var i = 0; i < dogs.length; i++) {
-				for (var j = 0; j < filterGender.length; j++) {
-					if (dogs[i].gender === filterGender[j]) {
-						$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
-					}
-				}
-			}
-		});
-=======
 		$("input:checkbox[name=dogGender]:checked").each(function() {
 			filterGender.push($(this).val());
 		});
@@ -148,6 +118,5 @@ $(document).ready(function() {
 				}
 			}
 		}
->>>>>>> copy1
 	});
 });
