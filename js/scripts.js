@@ -94,7 +94,6 @@ $(document).ready(function() {
 		var filterGender = [];
 		$("input:checkbox[name=dogGender]:checked").each(function() {
 			filterGender.push($(this).val());
-			debugger;
 			for (var i = 0; i < dogs.length; i++) {
 				for (var j = 0; j < filterGender.length; j++) {
 					if (dogs[i].gender === filterGender[j]) {
