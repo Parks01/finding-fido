@@ -115,3 +115,7 @@ h4.searchCategory {
   border-radius: 10px;
   padding: 40px;
 }
+
+#show-each-dog-bio-on-pic-click {
+  display: hide;
+}

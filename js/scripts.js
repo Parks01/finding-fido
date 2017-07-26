@@ -65,19 +65,19 @@ $(document).ready(function(){
 
 	$("#searchAll").click(function()
 	{
-	$("#show-all-results").empty();
-	var i = 0;
-		for (var j = 0; j < dogs.length; j++)
-		{
-			$("#show-all-results").append("<div class='row'>")
-			for (var k = 0; k < 3; k++)
+		$("#show-all-results").empty();
+		var i = 0;
+			for (var j = 0; j < dogs.length; j++)
 			{
+				$("#show-all-results").append("<div class='row'>")
+				for (var k = 0; k < 3; k++)
+				{
 				if (i < dogs.length) {
 					console.log("hello");
 				$("#show-all-results").append(
 					"<div class='col-md-4'>" +
-					"<a href = \"bio.html\">" +
-					"<img src='" + dogs[i].dogImage +  "'></a>"+
+			//		"<a href = \"bio.html\">" +
+					"<img src='" + dogs[i].dogImage +  "'>"+
 					"<br>"+
 					"<strong>" + dogs[i].dogName + "</strong>"+
 					"<br>" + dogs[i].age + "<br>" +
@@ -88,6 +88,20 @@ $(document).ready(function(){
 			}
 				$("#show-all-results").append("</div>")
 			}
+			for(var i=0; i<dogs.length; i++)
+		{
+				$(dogs[i].dogImage).click(function(){
+
+						$("#show-each-dog-bio-on-pic-click").append(
+						"<div class='col-md-4'>" +
+						"<img src='" + dogs[i].dogImage + "' >" +
+						"<br>" +
+						"<strong>" + dogs[i].dogName + "</strong>" +
+						"<br>" + dogs[i].age + "<br>" +
+						dogs[i].gender +
+						"</div>");
+			});
+		 }
 	});
 
 	$("#dogSearchFilter").submit(function(event) {
@@ -108,8 +122,8 @@ $(document).ready(function(){
 
 						$("#show-all-results").append(
 							"<div class='col-md-4'>" +
-							 "<a href = \"bio.html\">" +
-							 "<img src='" + dogs[i].dogImage + "' ></a>" +
+							// "<a href = \"bio.html\">" +
+							 "<img src='" + dogs[i].dogImage + "' >" +
 						"<br>" +
 						"<strong>" + dogs[i].dogName + "</strong>" +
 						"<br>" + dogs[i].age + "<br>" +
@@ -118,19 +132,22 @@ $(document).ready(function(){
 					}
 				}
 			}
+			for(var i=0; i<dogs.length; i++)
+			{
+				$(dogs[i].dogImage).click(function(){
+					$("#show-all-results").empty();
+
+						$("#show-each-dog-bio-on-pic-click").append(
+						"<div class='col-md-4'>" +
+						"<img src='" + (this).dogImage + "' >" +
+						"<br>" +
+						"<strong>" + (this).dogName + "</strong>" +
+						"<br>" + (this).age + "<br>" +
+						(this).gender +
+						"</div>");
+			});
+		}
 	});
 });
-	for(var i=0; i<dogs.length; i++)
-{
-		$(dogs[i].dogImage).click(function(){
 
-				$("#show-each-dog-bio-on-pic-click").append(	"<div class='col-md-4'>" +
-				"<img src='" + dogs[i].dogImage + "' >" +
-				"<br>" +
-				"<strong>" + dogs[i].dogName + "</strong>" +
-				"<br>" + dogs[i].age + "<br>" +
-				dogs[i].gender +
-				"</div>");
-	});
- }
 });
