@@ -91,7 +91,8 @@ $(document).ready(function() {
 		$("input:checkbox[name=dogSize]:checked").each(function() {
 			filterSize.push($(this).val());
 		});
-		console.log(filterSize);
+
+		var availableDogs = [];
 
 		if (filterAge.length === 0) {
 			filterAge.push("none");
@@ -112,12 +113,16 @@ $(document).ready(function() {
 							if (dogs[i].gender === filterGender[k] || filterGender[k] === "none") {
 								if (dogs[i].sizeDog === filterSize[l] || filterSize[l] === "none") {
 									$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
+									availableDogs.push(dogs[i]);
 								}
 							}
 						}
 					}
 				}
 			}
+		}
+		if (availableDogs.length === 0) {
+			$("#show-all-results").text("Sorry, we do not have a dog that matches your criteria at this time");
 		}
 	});
 });
