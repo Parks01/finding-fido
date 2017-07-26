@@ -1,5 +1,4 @@
-function Dog(dogName,age,size,gender,dogImage,shelter,isAvailable)
-{
+function Dog(dogName,age,size,gender,dogImage,shelter,isAvailable) {
 	this.dogName = dogName;
 	this.age = age;
 	this.size = size;
@@ -8,10 +7,10 @@ function Dog(dogName,age,size,gender,dogImage,shelter,isAvailable)
 	this.dogImage = dogImage;
 	this.isAvailable = isAvailable;
 }
+
 var dogs = [];
 
-function fillDogsData()
-{
+function fillDogsData() {
 	var newDog1 = new Dog("Jax", "adult", "medium" , "male", "img/jax.jpg",
 	"https://www.allpaws.com/adopt-a-dog/australian-cattle-dog-blue-heeler/6482237", true );
 	dogs[0] = newDog1;
@@ -56,48 +55,58 @@ function fillDogsData()
   dogs[19] = newDog20;
 	var newDog21 = new Dog("Bon Bon", "adult", "small", "female", "img/bonbon.jpg", "https://s3.amazonaws.com/filestore.rescuegroups.org/5922/pictures/animals/11624/11624355/46755990_500x531.jpg", true);
 	dogs[20] = newDog21;
-
 }
 
-$(document).ready(function(){
+$(document).ready(function() {
 
 	fillDogsData();
 
-	$("#searchAll").click(function()
-	{ $("#show-all-results").empty();
-	var i = 0;
-		for (var j = 0; j < dogs.length; j++)
-		{
-			$("#show-all-results").append("<div class='row'>")
-			for (var k = 0; k < 3; k++)
-			{
+	$("#searchAll").click(function() {
+		$("#show-all-results").empty();
+
+		var i = 0;
+			for (var j = 0; j < dogs.length; j++) {
 				if (i < dogs.length) {
-				$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>'" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
-				i++;
+					$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
+					i++;
 				}
 			}
-				$("#show-all-results").append("</div>")
-			}
-	});
+		});
 
 	$("#dogSearchFilter").submit(function(event) {
-			event.preventDefault();
-			$("#show-all-results").empty();
+		event.preventDefault();
+		$("#show-all-results").empty();
 
-			var filterAge = [];
-			$("input:checkbox[name=dogAge]:checked").each(function(){
-      	filterAge.push($(this).val());
+		var filterAge = [];
+		var filterGender = [];
+		$("input:checkbox[name=dogAge]:checked").each(function() {
+    	filterAge.push($(this).val());
+		});
+		$("input:checkbox[name=dogGender]:checked").each(function() {
+			filterGender.push($(this).val());
+		});
 
-				for(var i=0; i< dogs.length; i++)
-			{
-				for(var j=0; j< filterAge.length ; j++)
-				{
-					if(dogs[i].age === filterAge[j])
-					{
-						$("#show-all-results").append("<table><tr colspan=\"2\"><div id=\"show-image\"><img src='" + dogs[i].dogImage + "'/></div></tr><tr><th colspan=\"2\" class=\"dog-name\"><strong>" + dogs[i].dogName + "</strong></th></tr><tr><td>Age: " + dogs[i].age + "</td><td class=\"age\"></td></tr><tr><td>Gender: " + dogs[i].gender + "</td><td class=\"gender\"></td></tr></table>")
-					}
+		for(var i=0; i< dogs.length; i++) {
+			for(var j=0; j< filterAge.length ; j++) {
+				for(var k=0; k< filterGender.length ; k++)
+				if(dogs[i].age === filterAge[j] && dogs[i].gender === filterGender[k]) {
+					$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
 				}
 			}
+		}
+
+
+		// var filterGender = [];
+		// $("input:checkbox[name=dogGender]:checked").each(function() {
+		// 	filterGender.push($(this).val());
+		//
+		// 	for(var i=0; i< dogs.length; i++) {
+		// 		for(var j=0; j< filterGender.length ; j++) {
+		// 			if(dogs[i].gender === filterGender[j]) {
+		// 				$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
+		// 			}
+		// 		}
+		// 	}
+		// });
 	});
-});
 });
