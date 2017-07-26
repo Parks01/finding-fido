@@ -119,19 +119,5 @@ $(document).ready(function() {
 				}
 			}
 		}
-
-
-		// var filterGender = [];
-		// $("input:checkbox[name=dogGender]:checked").each(function() {
-		// 	filterGender.push($(this).val());
-		//
-		// 	for(var i=0; i< dogs.length; i++) {
-		// 		for(var j=0; j< filterGender.length ; j++) {
-		// 			if(dogs[i].gender === filterGender[j]) {
-		// 				$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
-		// 			}
-		// 		}
-		// 	}
-		// });
 	});
 });
