@@ -77,6 +77,16 @@ h4.searchCategory {
   background-repeat: no-repeat;
   margin: 0px;
 }
+.resources {
+  background-image: url("../img/dog-pack.jpg");
+  background-size: 100%;
+  background-position: top;
+  background-attachment: fixed;
+  height: 900px;
+  width: 100vw;
+  background-repeat: no-repeat;
+  margin: 0px;
+}
 
 #searchAll {
   font-family: sans-serif;
@@ -114,4 +124,7 @@ h4.searchCategory {
 .well {
   border-radius: 10px;
   padding: 40px;
+}
+.dogImg {
+  width: 500px;
 }
