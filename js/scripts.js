@@ -1,17 +1,16 @@
-function Dog(dogName,age,size,gender,dogImage,shelter,isAvailable)
-{
+function Dog(dogName,age,sizeDog,gender,dogImage,shelter,isAvailable) {
 	this.dogName = dogName;
 	this.age = age;
-	this.size = size;
+	this.sizeDog = sizeDog;
 	this.gender = gender;
 	this.shelter = shelter;
 	this.dogImage = dogImage;
 	this.isAvailable = isAvailable;
 }
+
 var dogs = [];
 
-function fillDogsData()
-{
+function fillDogsData() {
 	var newDog1 = new Dog("Jax", "adult", "medium" , "male", "img/jax.jpg",
 	"https://www.allpaws.com/adopt-a-dog/australian-cattle-dog-blue-heeler/6482237", true );
 	dogs[0] = newDog1;
@@ -56,39 +55,24 @@ function fillDogsData()
   dogs[19] = newDog20;
 	var newDog21 = new Dog("Bon Bon", "adult", "small", "female", "img/bonbon.jpg", "https://s3.amazonaws.com/filestore.rescuegroups.org/5922/pictures/animals/11624/11624355/46755990_500x531.jpg", true);
 	dogs[20] = newDog21;
-
 }
 
 $(document).ready(function(){
 
 	fillDogsData();
 
-	$("#searchAll").click(function()
-	{
-	$("#show-all-results").empty();
-	var i = 0;
-		for (var j = 0; j < dogs.length; j++)
-		{
-			$("#show-all-results").append("<div class='row'>")
-			for (var k = 0; k < 3; k++)
-			{
+	$("#searchAll").click(function() {
+		$("#show-all-results").empty();
+
+		var i = 0;
+			for (var j = 0; j < dogs.length; j++) {
 				if (i < dogs.length) {
-					console.log("hello");
-				$("#show-all-results").append(
-					"<div class='col-md-4'>" +
-					"<a href = \"bio.html\">" +
-					"<img src='" + dogs[i].dogImage +  "'></a>"+
-					"<br>"+
-					"<strong>" + dogs[i].dogName + "</strong>"+
-					"<br>" + dogs[i].age + "<br>" +
-					 dogs[i].gender +
-					 "</div>");
-				i++;
+					$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
+					i++;
 				}
 			}
-				$("#show-all-results").append("</div>")
-			}
-	});
+		});
+
 
 	$("#dogSearchFilter").submit(function(event) {
 
@@ -99,38 +83,53 @@ $(document).ready(function(){
 			$("input:checkbox[name=dogAge]:checked").each(function(){
       	filterAge.push($(this).val());
 
-				for(var i=0; i< dogs.length; i++)
-			{
-				for(var j=0; j< filterAge.length ; j++)
-				{
-					if(dogs[i].age === filterAge[j])
-					{
+		var filterAge = [];
+		var filterGender = [];
+		var filterSize = [];
+		$("input:checkbox[name=dogAge]:checked").each(function() {
+    	filterAge.push($(this).val());
+		});
 
-						$("#show-all-results").append(
-							"<div class='col-md-4'>" +
-							 "<a href = \"bio.html\">" +
-							 "<img src='" + dogs[i].dogImage + "' ></a>" +
-						"<br>" +
-						"<strong>" + dogs[i].dogName + "</strong>" +
-						"<br>" + dogs[i].age + "<br>" +
-						dogs[i].gender +
-						"</div>");
+		$("input:checkbox[name=dogGender]:checked").each(function() {
+			filterGender.push($(this).val());
+		});
+
+		$("input:checkbox[name=dogSize]:checked").each(function() {
+			filterSize.push($(this).val());
+		});
+
+		var availableDogs = [];
+
+		if (filterAge.length === 0) {
+			filterAge.push("none");
+		}
+
+		if (filterGender.length === 0) {
+			filterGender.push("none");
+		}
+
+		if (filterSize.length === 0) {
+			filterSize.push("none");
+		}
+		for (var i = 0; i < dogs.length; i++) {
+			for (var j = 0; j < filterAge.length; j++) {
+				for (var k = 0; k < filterGender.length; k++) {
+					for (var l = 0; l < filterSize.length; l++) {
+						if (dogs[i].age === filterAge[j] || filterAge[j] === "none") {
+							if (dogs[i].gender === filterGender[k] || filterGender[k] === "none") {
+								if (dogs[i].sizeDog === filterSize[l] || filterSize[l] === "none") {
+									$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
+									availableDogs.push(dogs[i]);
+								}
+							}
+						}
 					}
 				}
 			}
-	});
-});
-	for(var i=0; i<dogs.length; i++)
-{
-		$(dogs[i].dogImage).click(function(){
-
-				$("#show-each-dog-bio-on-pic-click").append(	"<div class='col-md-4'>" +
-				"<img src='" + dogs[i].dogImage + "' >" +
-				"<br>" +
-				"<strong>" + dogs[i].dogName + "</strong>" +
-				"<br>" + dogs[i].age + "<br>" +
-				dogs[i].gender +
-				"</div>");
+		}
+		if (availableDogs.length === 0) {
+			$("#show-all-results").text("Sorry, we do not have a dog that matches your criteria at this time");
+		}
 	});
  }
 });
