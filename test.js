@@ -69,33 +69,8 @@ $(document).ready(function() {
 				if (i < dogs.length) {
 					$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
 					i++;
-
-					// $("#show-all-results").append(
-					// 	"<div class='col-md-4'>" +
-					// 	"<a href ='" + #show-each-dog-bio-on-pic-click +  "'>" +
-					// 	"<img class='dog-picture' src='" + dogs[i].dogImage + "'>" +
-					// 	"</a>" +
-					// "<br>" +
-					// "<strong>" + dogs[i].dogName + "</strong>"+
-					// "<br>" + dogs[i].age + "<br>" +
-					// 	dogs[i].gender +
-					// 	"</div>");
-					// i++;
-					//NOT WORKING!!! - MAY WANT TO DELETE AFTER REVIEWING
 				}
 			}
-			//
-			// for(var i=0; i<dogs.length; i++) {
-			// 	$(".dog-picture").click(function(){
-			// 		console.log(dogs[20])	;
-			// 		console.log($(this).attr("src"));
-			// 		console.log($(this).val());
-			// 		var currentPicture = $(this).attr("src");
-			//
-			// 		$("#dogBioPic").attr("src", currentPicture);
-			// 	});
-			// 	}
-			//THIS CODE WAS WORKING DISPLAYING THE DOG IMAGE!!!!
 		});
 
 	$("#dogSearchFilter").submit(function(event) {
@@ -151,25 +126,3 @@ $(document).ready(function() {
 		}
 	});
 });
-
-// 	for(var i=0; i<dogs.length; i++)
-// 	{
-// 		$(dogs[i].dogImage).click(function(){
-//
-// 				$("#show-all-results").empty();
-// 				$("#show-each-dog-bio-on-pic-click").show();
-// 				$("#show-each-dog-bio-on-pic-click").append(
-// 				"<div class='col-md-4'>" +
-// 				"<a href ='#show-each-dog-bio-on-pic-click'" +  ">" +
-// 				"<img src='" + (this).dogImage + "' >" +
-// 				"</a>" +
-// 				"<br>" +
-// 				"<strong>" + (this).dogName + "</strong>" +
-// 				"<br>" + (this).age + "<br>" +
-// 				(this).gender +
-// 				"</div>");
-// 			});
-// 		}
-// 	});
-// // });
-//NOT WORKING BUT LOOK AT IT TOMORROW ANYWAY
