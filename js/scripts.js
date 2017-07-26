@@ -79,19 +79,31 @@ $(document).ready(function() {
 
 		var filterAge = [];
 		var filterGender = [];
+		var filterSize = [];
 		$("input:checkbox[name=dogAge]:checked").each(function() {
     	filterAge.push($(this).val());
 		});
+
 		$("input:checkbox[name=dogGender]:checked").each(function() {
 			filterGender.push($(this).val());
 		});
 
-		for(var i=0; i< dogs.length; i++) {
-			for(var j=0; j< filterAge.length ; j++) {
-				for(var k=0; k< filterGender.length ; k++)
-				if(dogs[i].age === filterAge[j] && dogs[i].gender === filterGender[k]) {
-					$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
-				}
+		if (filterAge.length === 0) {
+			filterAge.push("none");
+		}
+
+		if (filterGender.length === 0) {
+			filterGender.push("none");
+		}
+
+		for (var i = 0; i < dogs.length; i++) {
+			for (var j = 0; j < filterAge.length ; j++) {
+				for (var k = 0; k < filterGender.length ; k++)
+					if (dogs[i].age === filterAge[j] || filterAge[j] === "none") {
+						if (dogs[i].gender === filterGender[k] || filterGender[k] === "none") {
+							$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
+						}
+					}
 			}
 		}
 
