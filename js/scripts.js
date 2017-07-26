@@ -57,10 +57,9 @@ function fillDogsData() {
 	dogs[20] = newDog21;
 }
 
-$(document).ready(function(){
+$(document).ready(function() {
 
 	fillDogsData();
-<<<<<<< HEAD
 
 	$("#searchAll").click(function() {
 		$("#show-all-results").empty();
@@ -74,7 +73,7 @@ $(document).ready(function(){
 			}
 		});
 
-=======
+
 	$("#searchAll").click(function()
 	{
 		$("#show-all-results").empty();
@@ -115,6 +114,7 @@ $(document).ready(function(){
 						// var currentGender = ;
 						$("#dogBioPic").attr("src", currentPicture);
 
+						$("#dogBioPic").append("I love you.");
 						// $("#show-each-dog-bio-on-pic-click").append(
 						// "<div class='col-md-4'>" +
 						// "<a href ='#show-each-dog-bio-on-pic-click'" +  ">" +
@@ -128,16 +128,17 @@ $(document).ready(function(){
 			});
 		 }
 	});
->>>>>>> copy2
+
 
 	$("#dogSearchFilter").submit(function(event) {
 		event.preventDefault();
-<<<<<<< HEAD
-			$("#show-all-results").empty();
-				console.log("hi");
-			var filterAge = [];
-			$("input:checkbox[name=dogAge]:checked").each(function(){
-      	filterAge.push($(this).val());
+
+		$("#show-all-results").empty();
+		console.log("hi");
+		var filterAge = [];
+		$("input:checkbox[name=dogAge]:checked").each(function() {
+    	filterAge.push($(this).val());
+		});
 
 		var filterAge = [];
 		var filterGender = [];
@@ -187,8 +188,8 @@ $(document).ready(function(){
 			$("#show-all-results").text("Sorry, we do not have a dog that matches your criteria at this time");
 		}
 	});
- }
-=======
+});
+
 		$("#show-all-results").empty();
 		//console.log("hi");
 		var filterAge = [];
@@ -213,7 +214,7 @@ $(document).ready(function(){
 					}
 				}
 			}
-			for(var i=0; i<dogs.length; i++)
+			for(var i = 0; i < dogs.length; i++)
 			{
 				$(dogs[i].dogImage).click(function(){
 
@@ -228,10 +229,7 @@ $(document).ready(function(){
 						"<br>" + (this).age + "<br>" +
 						(this).gender +
 						"</div>");
-			});
-		}
+				});
+			}
 	});
-});
-
->>>>>>> copy2
 });
