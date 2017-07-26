@@ -23,6 +23,7 @@ nav {
   margin-bottom: 0px;
   padding: 5px 5px 10px 5px;
 }
+
 nav a:link, nav a:visited {
   color: #FFFFFF;
   text-align: center;
@@ -118,4 +119,23 @@ h4.searchCategory {
 
 #show-each-dog-bio-on-pic-click {
   display: hide;
+}
+well
+{
+  height: 80%;
+  width: 50%;
+}
+.about-us-image {
+ margin-top: 100px;
+ }
+ img.about-us-image {
+ width: 20%;
+ height: 40%;
+}
+.about-us-text {
+  border: solid 5px #5DADE2;
+  height:150%;
+  width: 100%;
+  font-size: 20px;
+ border-radius: 5px;
 }
