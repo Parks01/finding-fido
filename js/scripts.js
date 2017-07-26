@@ -57,9 +57,10 @@ function fillDogsData() {
 	dogs[20] = newDog21;
 }
 
-$(document).ready(function() {
+$(document).ready(function(){
 
 	fillDogsData();
+<<<<<<< HEAD
 
 	$("#searchAll").click(function() {
 		$("#show-all-results").empty();
@@ -73,9 +74,70 @@ $(document).ready(function() {
 			}
 		});
 
+=======
+	$("#searchAll").click(function()
+	{
+		$("#show-all-results").empty();
+		var i = 0;
+			for (var j = 0; j < dogs.length; j++)
+			{
+				$("#show-all-results").append("<div class='row'>")
+				for (var k = 0; k < 3; k++)
+				{
+					if (i < dogs.length)
+					{
+						console.log("hello");
+						$("#show-all-results").append(
+							"<div class='col-md-4'>" +
+							"<a href ='#show-each-dog-bio-on-pic-click'" +  ">" +
+							"<img class=\"dog-picture\" src='" + dogs[i].dogImage + "' >" +
+					 	"</a>" +
+						"<br>" +
+						"<strong>" + dogs[i].dogName + "</strong>"+
+						"<br>" + dogs[i].age + "<br>" +
+					 	dogs[i].gender +
+					 	"</div>");
+						i++;
+					}
+				}
+				$("#show-all-results").append("</div>")
+			}
+			for(var i=0; i<dogs.length; i++)
+			{
+				// $(dogs[i].dogImage).click(function(){
+					$(".dog-picture").click(function(){
+						console.log(dogs[20])	;
+						console.log($(this).attr("src"));
+						console.log($(this).val());
+						var currentPicture = $(this).attr("src");
+						// var currentName = ;
+						// var currentAge = ;
+						// var currentGender = ;
+						$("#dogBioPic").attr("src", currentPicture);
+
+						// $("#show-each-dog-bio-on-pic-click").append(
+						// "<div class='col-md-4'>" +
+						// "<a href ='#show-each-dog-bio-on-pic-click'" +  ">" +
+						// "<img src='" + dogs[0].dogImage + "' >" +
+						// "</a>" +
+						// "<br>" +
+						// "<strong>" + dogs[0].dogName + "</strong>" +
+						// "<br>" + dogs[0].age + "<br>" +
+						// dogs[0].gender +
+						// "</div>");
+			});
+		 }
+	});
+>>>>>>> copy2
+
 	$("#dogSearchFilter").submit(function(event) {
 		event.preventDefault();
-		$("#show-all-results").empty();
+<<<<<<< HEAD
+			$("#show-all-results").empty();
+				console.log("hi");
+			var filterAge = [];
+			$("input:checkbox[name=dogAge]:checked").each(function(){
+      	filterAge.push($(this).val());
 
 		var filterAge = [];
 		var filterGender = [];
@@ -125,4 +187,51 @@ $(document).ready(function() {
 			$("#show-all-results").text("Sorry, we do not have a dog that matches your criteria at this time");
 		}
 	});
+ }
+=======
+		$("#show-all-results").empty();
+		//console.log("hi");
+		var filterAge = [];
+		$("input:checkbox[name=dogAge]:checked").each(function(){
+      filterAge.push($(this).val());
+			for(var i=0; i< dogs.length; i++)
+			{
+				for(var j=0; j< filterAge.length ; j++)
+				{
+					if(dogs[i].age === filterAge[j])
+					{
+						$("#show-all-results").append(
+							"<div class='col-md-4'>" +
+							"<a href ='#show-each-dog-bio-on-pic-click'" +  ">" +
+							"<img src='" + dogs[i].dogImage + "' >" +
+							 "</a>" +
+							"<br>" +
+							"<strong>" + dogs[i].dogName + "</strong>" +
+							"<br>" + dogs[i].age + "<br>" +
+							dogs[i].gender +
+							"</div>");
+					}
+				}
+			}
+			for(var i=0; i<dogs.length; i++)
+			{
+				$(dogs[i].dogImage).click(function(){
+
+						$("#show-all-results").empty();
+						$("#show-each-dog-bio-on-pic-click").append(
+						"<div class='col-md-4'>" +
+						"<a href ='#show-each-dog-bio-on-pic-click'" +  ">" +
+						"<img src='" + (this).dogImage + "' >" +
+						"</a>" +
+						"<br>" +
+						"<strong>" + (this).dogName + "</strong>" +
+						"<br>" + (this).age + "<br>" +
+						(this).gender +
+						"</div>");
+			});
+		}
+	});
+});
+
+>>>>>>> copy2
 });

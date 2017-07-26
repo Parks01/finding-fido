@@ -17,18 +17,17 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Finding Fido</a>
+        <a class="navbar-brand" href="index.html">Finding Fido</a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#home">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#aboutUs">About Us/Contact</a>
-            <a class="nav-item nav-link" href="#viewAll">View All Dogs</a>
-            <a class="nav-item nav-link disabled" href="#resources">Resources</a>
+            <a class="nav-item nav-link" href="about-us.html">About Us/Contact</a>
+            <a class="nav-item nav-link disabled" href="resources.html">Resources</a>
           </div>
         </nav>
-        <h1 class="title">FINDING FIDO</h1>
-      </div>
-    </div>
+
+    <h1 class="title">FINDING FIDO</h1>
+  </div>
+</div>
 
     <div class="container">
       <button id="searchAll" class="btn btn-primary">Search All Dogs</button>
@@ -59,9 +58,9 @@
             <div class="col-md-4">
               <h4 class="searchCategory">Search by Size:</h4>
               <div class="search form-group">
-                <input type="checkbox" name="dogSize" value="small">Small (up to 20 lbs) <br>
-                <input type="checkbox" name="dogSize" value="medium">Medium (up to 40 lbs) <br>
-                <input type="checkbox" name="dogSize" value="large">Large (up to 60 lbs) <br>
+                <input type="checkbox" name="dogSmall" value="small">Small (up to 20 lbs) <br>
+                <input type="checkbox" name="dogMedium" value="medium">Medium (up to 40 lbs) <br>
+                <input type="checkbox" name="dogLarge" value="large">Large (up to 60 lbs) <br>
               </div>
             </div>
           </div>
@@ -73,17 +72,12 @@
         <div id="show-all-results">
 
         </div>
+        <div id="show-each-dog-bio-on-pic-click">
+          <img src="#" id="dogBioPic" />
 
+
+        </div>
       </div>
-
-      <div id="dogBio">
-
-        <!-- <p>More information to <button class="btn btn-default" id="adoptButton">ADOPT</button></p>
-        <br>
-        <p>Continue <button class="btn btn-default" id="searching">SEARCH</button></p> -->
-      </div>
-
-
     </div>
   </body>
 </html>
