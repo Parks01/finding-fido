@@ -67,7 +67,7 @@ function fillDogsData() {
   dogs[14] = newDog15;
   var newDog16 = new Dog("Trowa", "senior", "small", "male", "img/trowa.jpg", "http://petango.com/Adopt/Dog-Pekingese-35273754" , true, "My name is Trowa, and I am applying for the open position for loving companion in your home. I bring years of experience in cuddling, snuggling, and being all-around adorable. My strengths include walking well on leash and making easy friends with other dogs.");
   dogs[15] = newDog16;
-  var newDog17 = new Dog("Adam", "puppy", "small", "male", "img/adam.jpg", "http://petango.com/Adopt/Dog-Chihuahua-Short-Coat-35776600", true, "My name is Lamar and I am a wonderful small male adult who was just saved from a high-kill shelter in California where no one wanted me. I am a happy dog and so excited to find a new name");
+  var newDog17 = new Dog("Adam", "puppy", "small", "male", "img/adam.jpg", "http://petango.com/Adopt/Dog-Chihuahua-Short-Coat-35776600", true, "My name is Adam and I am a wonderful dog who was just saved from a high-kill shelter in California where no one wanted me. I am a happy dog and so excited to find a new name");
   dogs[16] = newDog17;
   var newDog18 = new Dog("Juno", "adult", "medium", "female", "img/juno.jpg", "http://petango.com/Adopt/Dog-Shepherd-35566487", true, "Meet Juno, a 5-year-old Shepherd and Husky mix, who would love to be your adventure sweetie. This happy girl loves to play, and will happily lead you anywhere you want to go, wiggling all the way. She also loves a good ear scratch & will trade plenty of sweet kisses for one.");
   dogs[17] = newDog18;
@@ -75,7 +75,7 @@ function fillDogsData() {
   dogs[18] = newDog19;
   var newDog20 = new Dog("Mamas", "adult", "small", "female", "img/mamas.jpg", "http://petango.com/Adopt/Dog-Chihuahua-Short-Coat-35859891", true, "Mamas is a sweetie pie who loves to socialize with other dogs and hang out with new buddies. This pretty lady has come a long way to find her new family and would love to get out of the shelter and into a comfy home! Mamas is best suited in a home with children 9yrs and older where she will be loved!");
   dogs[19] = newDog20;
-	var newDog21 = new Dog("Bon Bon", "adult", "small", "female", "img/bonbon.jpg", "https://s3.amazonaws.com/filestore.rescuegroups.org/5922/pictures/animals/11624/11624355/46755990_500x531.jpg", true, "My name is Bon Bon BB and I am a special needs dog because I am blind. I am a wonderful 7 year old Female Poodle and Bichon Mix who was just saved from a high-kill shelter in California where no one wanted me.");
+	var newDog21 = new Dog("Bon Bon", "adult", "small", "female", "img/bonbon.jpg", "https://www.gingerspetrescue.org/adoptable-dogs/#action_0=pet&animalID_0=11624355&petIndex_0=11", true, "My name is Bon Bon BB and I am a special needs dog because I am blind. I am a wonderful 7 year old Female Poodle and Bichon Mix who was just saved from a high-kill shelter in California where no one wanted me.");
 	dogs[20] = newDog21;
 };
 
