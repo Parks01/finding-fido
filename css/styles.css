@@ -147,5 +147,9 @@ h4.searchCategory {
   width: 100%;
   font-size: 20px;
  border-radius: 5px;
-
+}
+.bio-image {
+	float: left;
+	height: 50%;
+	width: 50%;
 }

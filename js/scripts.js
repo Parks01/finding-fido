@@ -8,6 +8,22 @@ function Dog(dogName,age,sizeDog,gender,dogImage,shelter,isAvailable) {
 	this.isAvailable = isAvailable;
 }
 
+function setupIndividualDogClick()
+{
+	$(".dog-picture").click(function(){
+			var id = $(this).attr("id");
+			$("#show-all-results").empty();
+			$("#show-each-dog-bio-on-pic-click").show();
+			$("#show-each-dog-bio-on-pic-click").append(
+			"<div class='col-md-8'>" +
+			"<img class ='bio-image' src='" + dogs[id].dogImage + "' >" +
+			"<strong>" + dogs[id].dogName + "</strong>" +
+			"<br>" + dogs[id].age + "<br>" +
+			dogs[id].gender +
+			"</div>");
+		});
+}
+
 var dogs = [];
 
 function fillDogsData() {
@@ -63,44 +79,17 @@ $(document).ready(function() {
 
 	$("#searchAll").click(function() {
 		$("#show-all-results").empty();
-
-		var i = 0;
-			for (var j = 0; j < dogs.length; j++) {
-				if (i < dogs.length) {
-					$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
-					i++;
-
-					// $("#show-all-results").append(
-					// 	"<div class='col-md-4'>" +
-					// 	"<a href ='" + #show-each-dog-bio-on-pic-click +  "'>" +
-					// 	"<img class='dog-picture' src='" + dogs[i].dogImage + "'>" +
-					// 	"</a>" +
-					// "<br>" +
-					// "<strong>" + dogs[i].dogName + "</strong>"+
-					// "<br>" + dogs[i].age + "<br>" +
-					// 	dogs[i].gender +
-					// 	"</div>");
-					// i++;
-					//NOT WORKING!!! - MAY WANT TO DELETE AFTER REVIEWING
-				}
-			}
-			//
-			// for(var i=0; i<dogs.length; i++) {
-			// 	$(".dog-picture").click(function(){
-			// 		console.log(dogs[20])	;
-			// 		console.log($(this).attr("src"));
-			// 		console.log($(this).val());
-			// 		var currentPicture = $(this).attr("src");
-			//
-			// 		$("#dogBioPic").attr("src", currentPicture);
-			// 	});
-			// 	}
-			//THIS CODE WAS WORKING DISPLAYING THE DOG IMAGE!!!!
-		});
+		$("#show-each-dog-bio-on-pic-click").empty();
+		for (var i = 0; i < dogs.length; i++) {
+			$("#show-all-results").append("<div class='col-md-4'>" + "<img class='dog-picture' src='" + dogs[i].dogImage + "' id='" + i + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
+		}
+		setupIndividualDogClick();
+	});
 
 	$("#dogSearchFilter").submit(function(event) {
 		event.preventDefault();
 		$("#show-all-results").empty();
+		$("#show-each-dog-bio-on-pic-click").empty();
 
 		var filterAge = [];
 		var filterGender = [];
@@ -137,7 +126,7 @@ $(document).ready(function() {
 						if (dogs[i].age === filterAge[j] || filterAge[j] === "none") {
 							if (dogs[i].gender === filterGender[k] || filterGender[k] === "none") {
 								if (dogs[i].sizeDog === filterSize[l] || filterSize[l] === "none") {
-									$("#show-all-results").append("<div class='col-md-4'>" + "<img src='" + dogs[i].dogImage + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
+									$("#show-all-results").append("<div class='col-md-4'>" + "<img class='dog-picture' src='" + dogs[i].dogImage + "' id='" + i + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
 									availableDogs.push(dogs[i]);
 								}
 							}
@@ -149,27 +138,9 @@ $(document).ready(function() {
 		if (availableDogs.length === 0) {
 			$("#show-all-results").text("Sorry, we do not have a dog that matches your criteria at this time");
 		}
+		else
+		{
+			setupIndividualDogClick();
+		}
 	});
 });
-
-// 	for(var i=0; i<dogs.length; i++)
-// 	{
-// 		$(dogs[i].dogImage).click(function(){
-//
-// 				$("#show-all-results").empty();
-// 				$("#show-each-dog-bio-on-pic-click").show();
-// 				$("#show-each-dog-bio-on-pic-click").append(
-// 				"<div class='col-md-4'>" +
-// 				"<a href ='#show-each-dog-bio-on-pic-click'" +  ">" +
-// 				"<img src='" + (this).dogImage + "' >" +
-// 				"</a>" +
-// 				"<br>" +
-// 				"<strong>" + (this).dogName + "</strong>" +
-// 				"<br>" + (this).age + "<br>" +
-// 				(this).gender +
-// 				"</div>");
-// 			});
-// 		}
-// 	});
-// // });
-//NOT WORKING BUT LOOK AT IT TOMORROW ANYWAY
