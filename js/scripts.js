@@ -7,31 +7,29 @@ function Dog(dogName,age,sizeDog,gender,dogImage,shelter,isBooked,bio) {
 	this.dogImage = dogImage;
 	this.isBooked = isBooked;
 	this.bio = bio;
-}
+};
 
-function setupIndividualDogClick()
-{
+function setupIndividualDogClick() {
 	$(".dog-picture").click(function(){
-			var id = $(this).attr("id");
-			$("#show-all-results").empty();
-			$("#show-each-dog-bio-on-pic-click").show();
-			$("#show-each-dog-bio-on-pic-click").append(
-			"<div class='col-md-8'>" +
-			"<img class ='bio-image' src='" + dogs[id].dogImage + "' >" +
-			"<strong>" + dogs[id].dogName + "</strong>" +
-			"<br>" + dogs[id].age + "<br>" +
-			dogs[id].gender +
-			"<br>" +
-			"<p>" + dogs[id].bio + "</p>"+
-			"</div>");
-		});
-}
+		var id = $(this).attr("id");
+		$("#show-all-results").empty();
+		$("#show-each-dog-bio-on-pic-click").show();
+		$("#show-each-dog-bio-on-pic-click").append(
+		"<div class='col-md-8'>" +
+		"<img class ='bio-image' src='" + dogs[id].dogImage + "' >" +
+		"<strong>" + dogs[id].dogName + "</strong>" +
+		"<br>" + dogs[id].age + "<br>" +
+		dogs[id].gender + "<p>" + dogs[id].bio + "</p>" +
+		"<br><a href=" + dogs[id].shelter + " target='_blank'>Go To Shelter</a>" +
+		"</div>");
+	});
+};
 
 var dogs = [];
 
 function fillDogsData() {
 	var newDog1 = new Dog("Jax", "adult", "medium" , "male", "img/jax.jpg",
-	"https://www.allpaws.com/adopt-a-dog/australian-cattle-dog-blue-heeler/6482237", true, "My name is Maggie Hart and I am a wonderful 2 year old Female Pug and Chihuahua Mix who was just saved from a high-kill shelter in California where no one wanted me.  I am a happy dog and so excited to find my new home");
+	"https://www.allpaws.com/adopt-a-dog/australian-cattle-dog-blue-heeler/6482237", true, "My name is Jax and I am a wonderful dog who was just saved from a high-kill shelter in California where no one wanted me.  I am a happy dog and so excited to find my new home");
 	dogs[0] = newDog1;
 	var newDog2 = new Dog("Ellie", "adult", "small" , "female", "img/ellie.jpg", "https://www.allpaws.com/adopt-a-dog/shih-tzu/6644799" , true , "My name is Ellie and I am a wonderful small adult female who was just saved from a high-kill shelter in California where no one wanted me.  I am a happy dog and so excited to find my new home");
 	dogs[1] = newDog2;
@@ -74,7 +72,7 @@ function fillDogsData() {
   dogs[19] = newDog20;
 	var newDog21 = new Dog("Bon Bon", "adult", "small", "female", "img/bonbon.jpg", "https://s3.amazonaws.com/filestore.rescuegroups.org/5922/pictures/animals/11624/11624355/46755990_500x531.jpg", true, "My name is Bon Bon BB and I am a special needs dog because I am blind. I am a wonderful 7 year old Female Poodle and Bichon Mix who was just saved from a high-kill shelter in California where no one wanted me.");
 	dogs[20] = newDog21;
-}
+};
 
 $(document).ready(function() {
 
@@ -97,6 +95,7 @@ $(document).ready(function() {
 		var filterAge = [];
 		var filterGender = [];
 		var filterSize = [];
+
 		$("input:checkbox[name=dogAge]:checked").each(function() {
     	filterAge.push($(this).val());
 		});
@@ -122,6 +121,7 @@ $(document).ready(function() {
 		if (filterSize.length === 0) {
 			filterSize.push("none");
 		}
+
 		for (var i = 0; i < dogs.length; i++) {
 			for (var j = 0; j < filterAge.length; j++) {
 				for (var k = 0; k < filterGender.length; k++) {
@@ -138,6 +138,7 @@ $(document).ready(function() {
 				}
 			}
 		}
+
 		if (availableDogs.length === 0) {
 			$("#show-all-results").text("Sorry, we do not have a dog that matches your criteria at this time");
 		}
@@ -145,5 +146,6 @@ $(document).ready(function() {
 		{
 			setupIndividualDogClick();
 		}
+
 	});
 });
