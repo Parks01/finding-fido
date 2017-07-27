@@ -88,6 +88,16 @@ h4.searchCategory {
   background-repeat: no-repeat;
   margin: 0px;
 }
+.about-us {
+  background-image: url("../img/orange-dog-run.jpg");
+  background-size: 100%;
+  background-position: top;
+  background-attachment: fixed;
+  height: 800px;
+  width: 100vw;
+  background-repeat: no-repeat;
+  margin: 0px;
+}
 
 #searchAll {
   font-family: sans-serif;
