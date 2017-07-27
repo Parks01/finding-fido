@@ -68,6 +68,22 @@ h4.searchCategory {
   font-weight: bold;
   letter-spacing: 2px;
 }
+.searchForm {
+  border: solid 4px;
+  padding: 30px;
+  margin-bottom: 60px;
+}
+.search input {
+  margin: 15px;
+}
+.search {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.copyRight {
+  margin-left: 35%;
+  font-size: 16px;
+}
 
 .header {
   background-image: url("../img/dogs-running.jpg");
@@ -88,7 +104,21 @@ h4.searchCategory {
   background-repeat: no-repeat;
   margin: 0px;
 }
-
+.about-us {
+  background-image: url("../img/orange-dog-run.jpg");
+  background-size: 100%;
+  background-position: top;
+  background-attachment: fixed;
+  height: 800px;
+  width: 100vw;
+  background-repeat: no-repeat;
+  margin: 0px;
+}
+.contact-logo {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
 
 #searchAll {
   font-family: sans-serif;
@@ -135,19 +165,53 @@ h4.searchCategory {
 #show-each-dog-bio-on-pic-click {
   display: none;
 }
-.about-us-image {
- margin-top: 100px;
- }
- img.about-us-image {
- width: 20%;
- height: 40%;
+
+#show-all-results {
+  font-size: 20px;
 }
+
+.about-us-side-pic {
+  width: 90%;
+  height: 100%;
+  margin: 160px 60px 30px 350px;
+}
+.about-header {
+  margin-top: 150px;
+  margin-bottom: 40px;
+  margin-left: 250px;
+  text-align: center;
+  letter-spacing: px;
+}
+
 .about-us-text {
-  border: solid 5px #5DADE2;
   height:150%;
   width: 100%;
+  font-size: 22px;
+  margin: 30px 60px 0px 150px;
+  text-align: justify;
+  padding: 40px;
+  margin-right: 50px;
+  text-align: justify;
+  border: solid 4px;
+
+}
+.about-footer {
   font-size: 20px;
- border-radius: 5px;
+  background-color: #48C9B0;
+  margin: 0;
+  margin-top: 60px;
+  padding: 30px;
+}
+.about-footer strong {
+  margin-left: 50px;
+}
+.footer h3 {
+  margin-left: 75px;
+}
+.bio-image {
+	float: right;
+	/*height: 50%;*/
+	width: 30%;
 }
 
 #dogParks, #dogTraining, #dogGrooming, #vets, #dietRecs, #supplies {
