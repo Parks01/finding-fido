@@ -173,9 +173,7 @@ h4.searchCategory {
   display: none;
 }
 
-.about-us-image {
- margin-top: 100px;
-}
+
 
  img.about-us-image {
  width: 20%;
@@ -257,4 +255,8 @@ h4.searchCategory {
   padding: 15px 20px 15px 20px;
   background-color: #5DADE2;
   border: none;
+}
+
+p {
+  font-size: 20px;
 }
