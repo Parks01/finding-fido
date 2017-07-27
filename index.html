@@ -30,12 +30,13 @@
 </div>
 
     <div class="container">
-      <button id="searchAll" class="btn btn-primary">Search All Dogs</button>
-      <div class="well searchForm">
+      <form id="dogSearchFilter">
+        <button id="searchAll" class="btn btn-primary">Search All Dogs</button>
+        <div class="well searchForm">
 
-        <h3 class="filterSearch">Filter Search:</h3>
+          <h3 class="filterSearch">Filter Search:</h3>
 
-        <form id="dogSearchFilter">
+        <!-- <form id="dogSearchFilter"> -->
           <div class="row">
             <div class="col-md-4">
 
@@ -65,17 +66,20 @@
             </div>
           </div>
           <button type="submit" id="submitSearch" class="btn btn-primary">Show Results</button>
-        </form>
-      </div>
-
-      <div id="results">
-        <div id="show-all-results">
-
+        <!-- </form> -->
         </div>
-        <div id="show-each-dog-bio-on-pic-click">
 
+        <div id="results">
+          <div id="show-all-results">
+
+          </div>
+          <div id="show-each-dog-bio-on-pic-click">
+
+          </div>
         </div>
-      </div>
+
+      </form>
+
     </div>
   </body>
 </html>

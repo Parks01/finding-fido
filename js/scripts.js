@@ -1,3 +1,7 @@
+var filterAge = [];
+var filterGender = [];
+var filterSize = [];
+
 function Dog(dogName,age,sizeDog,gender,dogImage,shelter,isBooked,bio) {
 	this.dogName = dogName;
 	this.age = age;
@@ -22,6 +26,7 @@ function setupIndividualDogClick() {
 		dogs[id].gender + "<p>" + dogs[id].bio + "</p>" +
 		"<br><a href=" + dogs[id].shelter + " target='_blank'>Go To Shelter</a>" +
 		"</div>");
+		includeReturnButtons();
 	});
 };
 
@@ -74,78 +79,113 @@ function fillDogsData() {
 	dogs[20] = newDog21;
 };
 
-$(document).ready(function() {
+var showAllDogs = function() {
+	$("#show-all-results").empty();
+	$("#show-each-dog-bio-on-pic-click").empty();
 
-	fillDogsData();
+	for (var i = 0; i < dogs.length; i++) {
+		$("#show-all-results").append("<div class='col-md-4'>" + "<img class='dog-picture' src='" + dogs[i].dogImage + "' id='" + i + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
+	}
+};
 
-	$("#searchAll").click(function() {
-		$("#show-all-results").empty();
-		$("#show-each-dog-bio-on-pic-click").empty();
-		for (var i = 0; i < dogs.length; i++) {
-			$("#show-all-results").append("<div class='col-md-4'>" + "<img class='dog-picture' src='" + dogs[i].dogImage + "' id='" + i + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
-		}
-		setupIndividualDogClick();
+var inputUserSearchCriteria = function() {
+	filterAge = [];
+	filterGender = [];
+	filterSize = [];
+	$("input:checkbox[name=dogAge]:checked").each(function() {
+		filterAge.push($(this).val());
 	});
 
-	$("#dogSearchFilter").submit(function(event) {
-		event.preventDefault();
-		$("#show-all-results").empty();
-		$("#show-each-dog-bio-on-pic-click").empty();
+	$("input:checkbox[name=dogGender]:checked").each(function() {
+		filterGender.push($(this).val());
+	});
 
-		var filterAge = [];
-		var filterGender = [];
-		var filterSize = [];
+	$("input:checkbox[name=dogSize]:checked").each(function() {
+		filterSize.push($(this).val());
+	});
+};
 
-		$("input:checkbox[name=dogAge]:checked").each(function() {
-    	filterAge.push($(this).val());
-		});
+var allowForBlankCriteria = function() {
+	if (filterAge.length === 0) {
+		filterAge.push("none");
+	}
 
-		$("input:checkbox[name=dogGender]:checked").each(function() {
-			filterGender.push($(this).val());
-		});
+	if (filterGender.length === 0) {
+		filterGender.push("none");
+	}
 
-		$("input:checkbox[name=dogSize]:checked").each(function() {
-			filterSize.push($(this).val());
-		});
+	if (filterSize.length === 0) {
+		filterSize.push("none");
+	}
+};
 
-		var availableDogs = [];
+var filterEachDog = function() {
+	var availableDogs = [];
 
-		if (filterAge.length === 0) {
-			filterAge.push("none");
-		}
-
-		if (filterGender.length === 0) {
-			filterGender.push("none");
-		}
-
-		if (filterSize.length === 0) {
-			filterSize.push("none");
-		}
-
-		for (var i = 0; i < dogs.length; i++) {
-			for (var j = 0; j < filterAge.length; j++) {
-				for (var k = 0; k < filterGender.length; k++) {
-					for (var l = 0; l < filterSize.length; l++) {
-						if (dogs[i].age === filterAge[j] || filterAge[j] === "none") {
-							if (dogs[i].gender === filterGender[k] || filterGender[k] === "none") {
-								if (dogs[i].sizeDog === filterSize[l] || filterSize[l] === "none") {
-									$("#show-all-results").append("<div class='col-md-4'>" + "<img class='dog-picture' src='" + dogs[i].dogImage + "' id='" + i + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
-									availableDogs.push(dogs[i]);
-								}
+	for (var i = 0; i < dogs.length; i++) {
+		for (var j = 0; j < filterAge.length; j++) {
+			for (var k = 0; k < filterGender.length; k++) {
+				for (var l = 0; l < filterSize.length; l++) {
+					if (dogs[i].age === filterAge[j] || filterAge[j] === "none") {
+						if (dogs[i].gender === filterGender[k] || filterGender[k] === "none") {
+							if (dogs[i].sizeDog === filterSize[l] || filterSize[l] === "none") {
+								$("#show-all-results").append("<div class='col-md-4'>" + "<img class='dog-picture' src='" + dogs[i].dogImage + "' id='" + i + "'/>" + "<br><strong>" + dogs[i].dogName + "</strong><br>" + dogs[i].age + "<br>" + dogs[i].gender + "</div>");
+								availableDogs.push(dogs[i]);
 							}
 						}
 					}
 				}
 			}
 		}
+	}
 
-		if (availableDogs.length === 0) {
-			$("#show-all-results").text("Sorry, we do not have a dog that matches your criteria at this time");
-		}
-		else
-		{
-			setupIndividualDogClick();
-		}
+	if (availableDogs.length === 0) {
+		$("#show-all-results").text("Sorry, we do not have a dog that matches your criteria at this time");
+	}
+	else
+	{
+		setupIndividualDogClick();
+	}
+};
 
+var filterDogs = function() {
+	$("#show-all-results").empty();
+	$("#show-each-dog-bio-on-pic-click").empty();
+
+	inputUserSearchCriteria();
+	allowForBlankCriteria();
+	filterEachDog();
+};
+
+var includeReturnButtons = function() {
+	$("#show-each-dog-bio-on-pic-click").append("<button id='allDogs' class='btn btn-primary'>Show All Dogs</button>");
+	$("#show-each-dog-bio-on-pic-click").append("<button type='submit' id='backToSearch' class='btn btn-primary'>Return to Results</button>");
+
+	$("#allDogs").click(function() {
+		showAllDogs();
+		setupIndividualDogClick();
 	});
+
+	$("#backToSearch").submit(function(event) {
+		console.log("cool");
+		event.preventDefault();
+		filterDogs();
+	});
+
+};
+
+$(document).ready(function() {
+
+	fillDogsData();
+
+	$("#searchAll").click(function() {
+		showAllDogs();
+		setupIndividualDogClick();
+	});
+
+	$("#dogSearchFilter").submit(function(event) {
+		event.preventDefault();
+		filterDogs();
+	});
+
 });

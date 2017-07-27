@@ -10,6 +10,7 @@ body {
   width: 300px;
   height: 300px;
 }
+
 #results {
   font-size: 20px;
   text-align: center;
@@ -56,11 +57,13 @@ h1.title {
   background-color: white;
   opacity: 0.7;
 }
+
 h3.filterSearch {
   font-family: sans-serif;
   font-size: 30px;
   letter-spacing: 3px;
 }
+
 h4.searchCategory {
   margin-top: 20px;
   margin-bottom: 15px;
@@ -78,6 +81,7 @@ h4.searchCategory {
   background-repeat: no-repeat;
   margin: 0px;
 }
+
 .resources {
   background-image: url("../img/dog-pack.jpg");
   background-size: 100%;
@@ -98,6 +102,7 @@ h4.searchCategory {
   background-color: #5DADE2;
   border: none;
 }
+
 #searchAll:hover, #searchAll:active, #submitSearch:hover, #submitSearch:active {
   border: solid 3px #5DADE2;
 }
@@ -107,10 +112,12 @@ h4.searchCategory {
   margin-top: 0px;
   padding: 0;
 }
+
 #dogSearchFilter {
   font-size: 18px;
   margin: 20px;
 }
+
 #submitSearch {
   font-family: sans-serif;
   font-size: 15px;
@@ -134,13 +141,16 @@ h4.searchCategory {
 #show-each-dog-bio-on-pic-click {
   display: none;
 }
+
 .about-us-image {
  margin-top: 100px;
- }
+}
+
  img.about-us-image {
  width: 20%;
  height: 40%;
 }
+
 .about-us-text {
   border: solid 5px #5DADE2;
   height:150%;
@@ -148,8 +158,20 @@ h4.searchCategory {
   font-size: 20px;
  border-radius: 5px;
 }
+
 .bio-image {
 	float: left;
 	height: 50%;
 	width: 50%;
+}
+
+.return-to-search {
+  font-family: sans-serif;
+  font-size: 15px;
+  letter-spacing: 5px;
+  margin-left: 80%;
+  margin-top: 4%;
+  padding: 15px 20px 15px 20px;
+  background-color: #5DADE2;
+  border: none;
 }
