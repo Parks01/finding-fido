@@ -80,6 +80,7 @@ function fillDogsData() {
 };
 
 var showAllDogs = function() {
+	console.log("hi");
 	$("#show-all-results").empty();
 	$("#show-each-dog-bio-on-pic-click").empty();
 
@@ -121,7 +122,6 @@ var allowForBlankCriteria = function() {
 
 var filterEachDog = function() {
 	var availableDogs = [];
-debugger;
 	for (var i = 0; i < dogs.length; i++) {
 		for (var j = 0; j < filterAge.length; j++) {
 			for (var k = 0; k < filterGender.length; k++) {
@@ -158,16 +158,11 @@ var filterDogs = function() {
 };
 
 var includeReturnButtons = function() {
-	// $("#show-each-dog-bio-on-pic-click").append("<button id='allDogs' class='btn btn-primary'>Show All Dogs</button>");
 	$("#show-each-dog-bio-on-pic-click").append("<button type='submit' id='backToSearch' class='btn btn-primary'>Return to Results</button>");
 
-	// $("#allDogs").click(function() {
-	// 	showAllDogs();
-	// 	setupIndividualDogClick();
-	// });
+
 
 	$("#backToSearch").submit(function(event) {
-		console.log("cool");
 		event.preventDefault();
 		filterDogs();
 	});
